@@ -9,7 +9,7 @@ import SzklanePanele from "@/components/SzklanePanele.vue";
 import P404 from "@/views/P404.vue";
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory('/71-glass'),
     routes: [
         {path: '/', component: Home},
         {path: '/szklo-na-wymiar', component: SzkloNaWymiar},
