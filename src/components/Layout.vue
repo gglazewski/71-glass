@@ -1,19 +1,56 @@
 <script setup>
-import {useRouter} from "vue-router";
+import {NDrawer, NDrawerContent, NButton, NIcon, NList, NListItem} from "naive-ui";
+import {MenuOutlined, PhotoSizeSelectSmallSharp, CropSquareSharp, PhoneAndroidRound} from "@vicons/material";
+import {ref} from "vue";
 
-const router = useRouter();
+const menuOpened = ref(false);
 
 </script>
 
 <template>
     <header class="py-5 px-1">
         <div class="container mx-auto flex flex-row justify-center sm:justify-between items-center flex-wrap sm:flex-nowrap">
-            <div><router-link to="/"><img class="w-[100px] cursor-pointer" alt="logo" src="/logo.png"></router-link></div>
-            <nav class="mt-10 sm:mt-0">
-                <ul class="list-none flex flex-row gap-5">
-                    <li class="p-2 rounded text-center font-bold uppercase"><router-link to="/szklo-na-wymiar">Szklo Na Wymiar</router-link></li>
-                    <li class="p-2 rounded text-center font-bold uppercase"><router-link to="/szklane-panele">Szklane Panele</router-link></li>
-                    <li class="p-2 rounded text-center font-bold uppercase"><router-link to="/#kontakt">Kontakt</router-link></li>
+            <router-link to="/"><img class="w-[100px] cursor-pointer" alt="logo" src="/logo.png"></router-link>
+
+            <n-button class="sm:hidden absolute left-5 top-5" @click="menuOpened = !menuOpened">
+                <n-icon size="20"><MenuOutlined/></n-icon>
+            </n-button>
+
+            <nav class="mt-10 sm:mt-0 w-full sm:w-1/3">
+                <n-drawer v-model:show="menuOpened">
+                    <n-drawer-content>
+                        <n-list>
+                            <n-list-item>
+                                <router-link to="/szklo-na-wymiar" class="rounded no-underline text-black hover:bg-[#0da3d1] p-1 hover:text-white flex flex-row gap-5 items-center">
+                                    <n-icon size="20"><PhotoSizeSelectSmallSharp/></n-icon> Szklo Na Wymiar
+                                </router-link>
+                            </n-list-item>
+
+                            <n-list-item>
+                                <router-link to="/szklane-panele" class="rounded no-underline text-black hover:bg-[#0da3d1] p-1 hover:text-white flex flex-row gap-5 items-center">
+                                    <n-icon size="20"><CropSquareSharp/></n-icon> Szklane Panele
+                                </router-link>
+                            </n-list-item>
+
+                            <n-list-item>
+                                <router-link to="/#kontakt" class="rounded no-underline text-black hover:bg-[#0da3d1] p-1 hover:text-white flex flex-row gap-5 items-center">
+                                    <n-icon size="20"><PhoneAndroidRound/></n-icon> Kontakt
+                                </router-link>
+                            </n-list-item>
+                        </n-list>
+                    </n-drawer-content>
+                </n-drawer>
+
+                <ul class="hidden sm:flex flex-row p-0 justify-between list-none">
+                    <li class="text-center font-bold uppercase p-1">
+                        <router-link to="/szklo-na-wymiar" class="rounded no-underline text-black hover:bg-[#0da3d1] p-1 hover:text-white">Szklo Na Wymiar</router-link>
+                    </li>
+                    <li class="rounded text-center font-bold uppercase p-1">
+                        <router-link to="/szklane-panele" class="rounded no-underline text-black hover:bg-[#0da3d1] p-1 hover:text-white">Szklane Panele</router-link>
+                    </li>
+                    <li class="rounded text-center font-bold uppercase p-1">
+                        <router-link to="/#kontakt" class="rounded no-underline text-black hover:bg-[#0da3d1] p-1 hover:text-white">Kontakt</router-link>
+                    </li>
                 </ul>
             </nav>
         </div>
