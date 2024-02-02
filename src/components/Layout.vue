@@ -1,6 +1,6 @@
 <script setup>
 import {NDrawer, NDrawerContent, NButton, NIcon, NList, NListItem} from "naive-ui";
-import {MenuOutlined, PhotoSizeSelectSmallSharp, CropSquareSharp, PhoneAndroidRound} from "@vicons/material";
+import {MenuOutlined, PhotoSizeSelectSmallSharp, CropSquareSharp, PhoneAndroidRound, ImageFilled} from "@vicons/material";
 import {ref} from "vue";
 
 const menuOpened = ref(false);
@@ -33,6 +33,12 @@ const menuOpened = ref(false);
                             </n-list-item>
 
                             <n-list-item>
+                                <router-link to="/galeria" class="rounded no-underline text-black hover:bg-[#0da3d1] p-1 hover:text-white flex flex-row gap-5 items-center">
+                                    <n-icon size="20"><ImageFilled/></n-icon> Galeria
+                                </router-link>
+                            </n-list-item>
+
+                            <n-list-item>
                                 <router-link to="/#kontakt" class="rounded no-underline text-black hover:bg-[#0da3d1] p-1 hover:text-white flex flex-row gap-5 items-center">
                                     <n-icon size="20"><PhoneAndroidRound/></n-icon> Kontakt
                                 </router-link>
@@ -45,9 +51,15 @@ const menuOpened = ref(false);
                     <li class="text-center font-bold uppercase p-1">
                         <router-link to="/szklo-na-wymiar" class="rounded no-underline text-black hover:bg-[#0da3d1] p-1 hover:text-white">Szklo Na Wymiar</router-link>
                     </li>
+
                     <li class="rounded text-center font-bold uppercase p-1">
                         <router-link to="/szklane-panele" class="rounded no-underline text-black hover:bg-[#0da3d1] p-1 hover:text-white">Szklane Panele</router-link>
                     </li>
+
+                    <li class="rounded text-center font-bold uppercase p-1">
+                        <router-link to="/#kontakt" class="rounded no-underline text-black hover:bg-[#0da3d1] p-1 hover:text-white">Galeria</router-link>
+                    </li>
+
                     <li class="rounded text-center font-bold uppercase p-1">
                         <router-link to="/#kontakt" class="rounded no-underline text-black hover:bg-[#0da3d1] p-1 hover:text-white">Kontakt</router-link>
                     </li>

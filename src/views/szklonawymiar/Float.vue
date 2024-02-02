@@ -1,6 +1,6 @@
 <script setup>
 import Layout from "@/components/Layout.vue";
-import {NPageHeader, NIcon, NList, NListItem, NButton} from "naive-ui";
+import {NPageHeader, NIcon, NList, NListItem, NCarousel} from "naive-ui";
 import {PhoneAndroidOutlined, HandymanRound, HardwareFilled, HeightRound, RoundedCornerTwotone, CheckCircleSharp} from "@vicons/material";
 
 </script>
@@ -88,11 +88,18 @@ import {PhoneAndroidOutlined, HandymanRound, HardwareFilled, HeightRound, Rounde
         </div>
 
 
-        <a class=" flex flex-row items-center justify-center gap-4 rounded capitalize w-full py-1.5 text-white no-underline bg-blue-400" href="tel:111">
+        <a class="mb-5 flex flex-row items-center justify-center gap-4 rounded capitalize w-full py-1.5 text-white no-underline bg-blue-400" href="tel:111">
             <n-icon size="20"><PhoneAndroidOutlined/></n-icon>
             zadzwon i dowiedz sie wiecej
-
         </a>
+
+        <n-carousel>
+            <img src="@/assets/img1.jpeg" class="w-full" />
+            <img src="@/assets/img2.jpeg" class="w-full" />
+            <img src="@/assets/img3.jpeg" class="w-full" />
+            <img src="@/assets/img4.jpeg" class="w-full" />
+            <img src="@/assets/img5.jpeg" class="w-full" />
+        </n-carousel>
     </Layout>
 </template>
 

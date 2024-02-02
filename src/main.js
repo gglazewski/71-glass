@@ -10,6 +10,7 @@ import Float from "@/views/szklonawymiar/Float.vue";
 import OptiWhite from "@/views/szklonawymiar/OptiWhite.vue";
 import P404 from "@/views/P404.vue";
 import Lacobel from "@/views/szklonawymiar/Lacobel.vue";
+import Galeria from "@/views/Galeria.vue";
 
 
 // blue: #0da3d1
@@ -23,6 +24,7 @@ const router = createRouter({
         {path: '/szklo-na-wymiar/optiwhite', component: OptiWhite},
         {path: '/szklo-na-wymiar/lacobel', component: Lacobel},
         {path: '/szklane-panele', component: SzklanePanele},
+        {path: '/galeria', component: Galeria},
         {path: '/:catchAll(.*)*', component: P404},
     ],
     scrollBehavior (to, from, savedPosition) {
